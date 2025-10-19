@@ -10,6 +10,7 @@
         name: 'Classic Plain Mat',
         description: 'Traditional comfort for everyday use. Handwoven with natural korai grass for a cool and comfortable sleep.',
         price: 349,
+        oPrice:0,
         rating: 3.8,
         badge: 'Bestseller',
         variations: [
@@ -37,6 +38,7 @@
         name: 'Patterned Mat',
         description: 'Stylish designs for a modern touch, combining traditional weaving with contemporary aesthetics.',
         price: 399,
+        oPrice:0,
         rating: 4.6,
         badge: 'Popular',
         variations: [
@@ -65,6 +67,7 @@
         name: 'The Artisian Mats',
         description: 'higher level of detail and craftsmanship. Simple, natural, and beautiful.',
         price: 299,
+        oPrice:0,
         rating: 4.6,
         badge: 'Premium',
         variations: [
@@ -94,6 +97,7 @@
         name: 'Premium Mat with Nylon Borders',
         description: 'Luxury weave with durable nylon borders for superior comfort, longevity, and a refined look.',
         price: 549,
+        oPrice:0,
         rating: 4.9,
         badge: 'Premium',
         variations: [
@@ -113,6 +117,7 @@
         name: 'Eco-Friendly Mat',
         description: 'Sustainably sourced korai grass mats that are environmentally friendly and biodegradable.',
         price: 279,
+        oPrice:0,
         rating: 3.7,
         badge: 'Affordable',
         variations: [
@@ -147,6 +152,7 @@
         name:'special coloured Mats',
         description: 'Affordable yet stylish mats that do not compromise on quality or design.',
         price: 319,
+        oPrice:0,
         rating: 4.2,
         badge: 'Budget',
         variations: [
@@ -166,6 +172,7 @@
         name:'special plain mats',
         description: 'Simple, natural, and beautiful mats that highlight the inherent beauty of korai grass.',
         price: 289,
+        oPrice:0,
         rating: 4.0,
         badge: 'Simple',
         variations: [
@@ -235,7 +242,7 @@
             <div class="rating">⭐ ${product.rating}</div>
             <h4>${product.name}</h4>
             <p>${product.description.split('.')[0]}.</p>
-            <h3>₹ ${product.price}</h3>
+            <h3>₹ ${product.price} <s>₹ ${product.oPrice}</s></h3>
           </div>
         </div>
       `).join('');
@@ -248,7 +255,7 @@
       currentVariationId = currentProduct.variations[0].id;
       
       modalProductName.textContent = currentProduct.name;
-      modalProductPrice.textContent = `₹ ${currentProduct.price}`;
+      modalProductPrice.innerHTML = `₹ ${currentProduct.price} <s>₹ ${currentProduct.oPrice}</s>`;
       modalProductDescription.textContent = currentProduct.description;
 
       updateModalContent();

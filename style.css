@@ -148,6 +148,9 @@
       position: absolute; margin: 10px;
     }
     .info { padding: 15px; }
+    .info h3 s{
+      font-size: 16px; color: gray; margin-left: 10px;
+    }
     .rating { color: gold; margin-bottom: 5px; }
 
     /* ORDER FORM */
@@ -310,6 +313,12 @@
         color: #4a6b3b;
         margin: 10px 0;
     }
+     #modal-product-price s{
+        font-size: 18px;
+        color: #55504e;
+        margin: 10px 0;
+    }
+
     #modal-product-description {
         color: #666;
         font-size: 16px;
