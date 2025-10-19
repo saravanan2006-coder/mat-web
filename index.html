@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thenmozhi Korai Mats</title>
+  <link rel="icon" type="png" href="images/Screenshot_2025-10-06-11-43-49-059_com.instagram.android-edit-removebg-preview.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  
+
+</head>
+<body>
+
+  <header>
+    <h1 class="shop-name">THENMOZHI KORAI MATS</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Benefits</a>
+      <a href="#tradition">About</a>
+      <a href="#products">Products</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <h2>Sleep Naturally,<br>Live Comfortably.</h2>
+    <a href="#products" class="btn">Shop Now</a>
+    <a href="#tradition" class="btn btn-outline">Learn More</a>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Why Choose Korai Mats?</h2>
+    <p>ELEVATE YOUR SLEEP NATURALLY</p>
+    <div class="feature-grid">
+      <div class="feature"><i class="fas fa-wind"></i><h4>Cool & Breathable</h4><p>Excellent air circulation for comfortable sleep.</p></div>
+      <div class="feature"><i class="fas fa-leaf"></i><h4>Eco-Friendly</h4><p>100% biodegradable and sustainably harvested.</p></div>
+      <div class="feature"><i class="fas fa-shield"></i><h4>Hypoallergenic</h4><p>Keeps allergens and dust mites away.</p></div>
+      <div class="feature"><i class="fas fa-heart"></i><h4>Health Benefits</h4><p>Promotes restful and natural sleep.</p></div>
+      <div class="feature"><i class="fas fa-star"></i><h4>Handwoven Heritage</h4><p>Crafted with skill passed through generations.</p></div>
+    </div>
+  </section>
+
+  <!-- TRADITION -->
+  <section class="tradition" id="tradition">
+    <h1>Tradition & Tranquility</h1>
+    <div class="container">
+      <section>
+        <h2>A Legacy of Craftsmanship</h2>
+        <div class="section-content">
+          <div class="text">
+            <p>Weavers in Tamil Nadu follow an ancient rhythm—using age-old techniques to create korai mats that are breathable, durable, and naturally cooling. Each mat is a reflection of heritage, woven with care and precision.</p>
+          </div>
+          <div class="image"><img src="images/img1.png" alt="Close-up of korai mat weave"></div>
+        </div>
+      </section>
+      <section>
+        <h2>Rooted in Culture</h2>
+        <div class="section-content">
+          <div class="image"><img src="images/img2.jpg" alt="Korai mats in traditional Tamil setting"></div>
+          <div class="text">
+            <p>Korai mats have graced Tamil homes and temples for centuries. Used in rituals, meditation, and daily life, they symbolize simplicity, sustainability, and a deep connection to Tamil heritage.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+      <h2>Benefits of Korai Mats</h2>
+      <div class="section-content">
+        <div class="text">
+          <ul>
+            <li><strong>Naturally Cool:</strong> Breathable weave regulates temperature.</li>
+            <li><strong>Supportive & Firm:</strong> Promotes spinal alignment and posture.</li>
+            <li><strong>Eco-Friendly:</strong> 100% biodegradable and sustainable.</li>
+            <li><strong>Handcrafted & Unique:</strong> Each mat is woven by skilled artisans.</li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="images/floor.jpg" alt="Korai mat in a modern bedroom">
+        </div>
+      </div>
+    </section>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <h1>Featured Products</h1>
+    <p>Discover our handpicked selection of premium korai mats</p>
+    <div class="product-grid" id="product-grid">
+      <!-- Products will be dynamically inserted here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="order-form-container" id="order">
+    <h3>Place Your Order</h3>
+    <form id="order-form">
+      <label for="product-name-input">Selected Product</label>
+      <input type="text" id="product-name-input" name="productName" readonly required style="background-color: #dcdcdc; font-weight: bold;">
+      
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" min="2" value="2" required>
+
+      <!-- NEW: Pricing Details -->
+      <div class="price-group">
+        <div>
+            <label for="price-per-mat">Price per Mat (₹)</label>
+            <input type="text" id="price-per-mat" name="pricePerMat" readonly style="background-color: #dcdcdc; font-weight: bold;">
+        </div>
+        <div>
+            <label for="total-price">Total Price (₹)</label>
+            <input type="text" id="total-price" name="totalPrice" readonly style="background-color: #dcdcdc; font-weight: bold;">
+        </div>
+      </div>
+      <!-- END NEW -->
+
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="customerName" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Delivery Address</label>
+      <input type="text" id="door-number" name="doorNumber" placeholder="Door No" required>
+      <input type="text" id="street" name="street" placeholder="Street" required>
+      <input type="text" id="city" name="city" placeholder="City" required>
+      
+      <select id="taluk-select" name="taluk" required>
+        <option value="" disabled selected>Select Taluk</option>
+        <option value="villupuram">Villupuram</option>
+        <option value="thiruvenneinallur">Thiruvenneinallur</option>
+        <option value="vanur">Vanur</option>
+        <option value="kallakurichi">Kallakurichi</option>
+        <option value="thirukovilur">Thirukovilur</option>
+        <option value="ulundurpet">Ulundurpet</option>
+        <option value="Cuddalore">Cuddalore</option>
+        <option value="panruti">Panruti</option>
+        <option value="Chidambaram">Chidambaram</option>
+      </select>
+
+      <select id="district-select" name="district" required>
+        <option value="" disabled selected>Select District</option>
+        <option value="Villupuram">Villupuram</option>
+        <option value="Cuddalore">Cuddalore</option>
+        <option value="kallakurichi">Kallakurichi</option>
+      </select>
+      <input type="text" id="state" name="state" placeholder="State" value="Tamil Nadu" readonly required>
+      <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" placeholder="Pincode" required>
+
+      <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Place Order</button>
+    </form>
+    <div id="notification"></div>
+    <div class="note">
+      <span class="note-badge">NOTE!</span>
+      <p><i class="fa-solid fa-bell" id="bell"></i> Kindly place your orders if you are located in the provided area. It will be expanded in the future.</p>
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer id="contact">
+     <div class="footer-grid">
+        <div class="footer-col">
+            <h4>THANK YOU FOR VISITING US</h4>
+            <p>Bringing you the finest handwoven korai mats from Tamil Nadu, crafted with tradition and care.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <p><a href="#home">Home</a></p>
+            <p><a href="#products">Products</a></p>
+            <p><a href="#tradition">About Us</a></p>
+            <p><a href="#features">Benefits</a></p>
+            <p><a href="#contact">Contact</a></p>
+        </div>
+        <div class="footer-col">
+            <h3>Stay connected</h3>
+            <p style="font-family:Verdana, Geneva, Tahoma, sans-serif;">click below to redirect</p>
+            <a href="tel:7708465612" aria-label="call-us"><i class="fa-solid fa-phone-volume"></i><p>7708465612</p></a>
+            <a href="tel:6383986265" aria-label="call-us"><p>6383986265</p></a>
+            <a href="mailto:thenmozhikoraiwefts21@gmail.com" aria-label="email-us"><i class="fa-solid fa-envelope"></i><p>thenmozhikoraiwefts21@gmail.com</p></a>
+            <a href="https://maps.app.goo.gl/2usCoaChKdCtVTKq8" aria-label="location"><i class="fa-solid fa-location-dot"></i><p>Villupuram</p></a>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <p>Need Help? Chat with us!</p>
+        <a href="https://wa.me/916383986265" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+    </div>
+    <div class="copyright">
+        <p>© 2024 Thenmozhi Korai mats. All rights reserved. Made with ❤️ in Tamil Nadu</p>
+    </div>
+  </footer>
+
+  <!-- NEW PRODUCT MODAL -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+      <button id="close-modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-images">
+          <img id="main-product-image" src="" alt="Main product view">
+          <div id="thumbnail-container"></div>
+        </div>
+        <div class="modal-details">
+          <h2 id="modal-product-name"></h2>
+          <p id="modal-product-price"></p>
+          <p id="modal-product-description"></p>
+          <div>
+            <h3>Color: <span id="selected-color-name"></span></h3>
+            <div id="color-swatch-container" class="color-swatch-container"></div>
+          </div>
+          <button class="btn" id="add-to-form-btn" style="width: 100%; margin-top: 20px;">Select This Mat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
