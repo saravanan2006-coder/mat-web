@@ -227,9 +227,10 @@
     const orderForm = document.getElementById('order-form');
     const productNameInput = document.getElementById('product-name-input');
     const quantityInput = document.getElementById('quantity');
-    const pricePerMatInput = document.getElementById('price-per-mat'); // NEW
-    const totalPriceInput = document.getElementById('total-price'); // NEW
+    const pricePerMatInput = document.getElementById('price-per-mat'); 
+    const totalPriceInput = document.getElementById('total-price'); 
     const notificationEl = document.getElementById('notification');
+    const rotatingMat = document.getElementById('rotating-mat-animation'); 
 
     // --- FUNCTIONS ---
 
@@ -310,6 +311,17 @@
     }
 
     // --- EVENT LISTENERS ---
+    // Scroll Animation Listener
+    window.addEventListener('scroll', () => {
+        if (!rotatingMat) return;
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+        const rotation = scrollPercent * 360; // One full rotation over the whole page
+        
+        // Applying a smooth transform
+        rotatingMat.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+    });
 
     productGrid.addEventListener('click', (e) => {
       const card = e.target.closest('.product-card');
