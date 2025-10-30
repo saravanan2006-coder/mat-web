@@ -1,8 +1,7 @@
   document.addEventListener('DOMContentLoaded', () => {
 
     // --- PRODUCT DATA ---
-    // Place your image files in the project images folder (e.g. /D:/e-comm/images)
-    // and reference them here as relative paths like 'images/your-image.jpg'
+
 
     const products = [
       {
