@@ -204,7 +204,7 @@
       }
     ];
 
-    // IMPORTANT: Replace this with your actual Google Apps Script Web App URL
+    // --- CONFIGURATION ---
     const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwc1DC9XdEoABZfQ3MftEgk2B58is1d0pmc5QJb-U5YvqDgCmJAvbSmTZFm7jiF9kuSVw/exec';
 
     // --- STATE VARIABLES ---
