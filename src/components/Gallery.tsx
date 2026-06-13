@@ -10,12 +10,12 @@ const galleryImages = [
   { src: "/images/classic plain.jpg", alt: "Artisan weaving korai grass mat" },
   { src: "/images/classic1.jpg", alt: "Traditional Tamil home with korai mats" },
   { src: "/images/Patterned.jpg", alt: "Premium korai mat display" },
-  { src: "/images/special colored.png", alt: "Classic plain korai mat" },
+  { src: "/images/Special colored.png", alt: "Classic plain korai mat" },
   // { src: "/images/img1.png", alt: "Colorful handwoven korai mat" },
-  { src: "/images/artisian.jpg", alt: "Patterned korai mat" },
-  { src: "/images/eco.jpg", alt: "Eco-friendly korai mat" },
-  { src: "/images/prem1.jpg", alt: "Special green korai mat" },
-  { src: "/images/prem.jpg", alt: "Special green korai mat" },
+  { src: "/images/Artisian.jpg", alt: "Patterned korai mat" },
+  { src: "/images/Eco.jpg", alt: "Eco-friendly korai mat" },
+  { src: "/images/Prem1.jpg", alt: "Special green korai mat" },
+  { src: "/images/Prem.jpg", alt: "Special green korai mat" },
 ]
 
 export default function Gallery() {

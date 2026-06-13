@@ -48,7 +48,7 @@ export const products: Product[] = [
     rating: 4.6,
     badge: "Premium",
     variations: [
-      { id: "var_003a", colorName: "Dotted R&B", colorHex: "#2563eb", images: ["/images/artisian.jpg"] },
+      { id: "var_003a", colorName: "Dotted R&B", colorHex: "#2563eb", images: ["/images/Artisian.jpg"] },
       // { id: "var_003b", colorName: "Light Green", colorHex: "#4ade80", images: ["/images/4-color.jpg", "/images/4-color (2).jpg"] },
     ],
   },
@@ -60,22 +60,10 @@ export const products: Product[] = [
     rating: 4.9,
     badge: "Premium",
     variations: [
-      { id: "var_004a", colorName: "Dark Orange", colorHex: "#c2410c", images: ["/images/prem.jpg", "/images/prem1.jpg"] },
+      { id: "var_004a", colorName: "Dark Orange", colorHex: "#c2410c", images: ["/images/Prem.jpg", "/images/Prem1.jpg"] },
     ],
   },
-  {
-    id: "prod_005",
-    name: "Eco-Friendly Mat",
-    description: "Sustainably sourced korai grass mats that are environmentally friendly and biodegradable.",
-    price: 150,
-    rating: 3.7,
-    badge: "Affordable",
-    variations: [
-      { id: "var_005a", colorName: "Yellow", colorHex: "#eab308", images: ["/images/normal-yell.jpg"] },
-      { id: "var_005b", colorName: "Red", colorHex: "#ef4444", images: ["/images/normal-red.jpg"] },
-      { id: "var_005c", colorName: "Purple", colorHex: "#a855f7", images: ["/images/normal-pur.jpg"] },
-    ],
-  },
+  
   {
     id: "prod_006",
     name: "Special Coloured Mats",
@@ -84,7 +72,7 @@ export const products: Product[] = [
     rating: 4.2,
     badge: "Budget",
     variations: [
-      { id: "var_006a", colorName: "Red", colorHex: "#ef4444", images: ["/images/special colored.png"] },
+      { id: "var_006a", colorName: "Red", colorHex: "#ef4444", images: ["/images/Special colored.png"] },
     ],
   },
   {
@@ -95,9 +83,9 @@ export const products: Product[] = [
     rating: 4.0,
     badge: "Simple",
     variations: [
-      { id: "var_007a", colorName: "Green", colorHex: "#22c55e", images: ["/images/eco.jpg"] },
-      { id: "var_007b", colorName: "Golden", colorHex: "#f59e0b", images: ["/images/spl-yellow.jpg"] },
-      { id: "var_007c", colorName: "Red", colorHex: "#ef4444", images: ["/images/spl-red.jpg"] },
+      { id: "var_007a", colorName: "Green", colorHex: "#22c55e", images: ["/images/Eco.jpg"] },
+      { id: "var_007b", colorName: "Golden", colorHex: "#f59e0b", images: ["/images/Ecoy.jpg"] },
+      { id: "var_007c", colorName: "Red", colorHex: "#ef4444", images: ["/images/Ecor.jpg"] },
     ],
   },
 ]
