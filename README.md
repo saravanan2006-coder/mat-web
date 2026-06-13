@@ -10,13 +10,13 @@
 
 ---
 
-## ✨ Overview
+## Overview
 
 Thenmozhi Korai Mats is a premium brand landing page that showcases handwoven, eco-friendly Korai grass mats crafted by skilled artisans in Tamil Nadu. This project transforms a traditional craft into a modern digital experience — blending cultural heritage with contemporary web design.
 
 The site is fully static (pre-rendered), accessible, responsive, and optimized for performance.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -28,7 +28,7 @@ The site is fully static (pre-rendered), accessible, responsive, and optimized f
 | **Lucide React** | Icon library |
 | **clsx + tailwind-merge** | Conditional class merging |
 
-## 🎨 Design System
+## Design System
 
 | Token | Value |
 |---|---|
@@ -40,20 +40,20 @@ The site is fully static (pre-rendered), accessible, responsive, and optimized f
 | Font (headings) | Playfair Display |
 | Font (body) | Inter |
 
-## ✨ Features
+## Features
 
 - **Hero section** — split-screen layout with animated statistics and scroll indicator
 - **Trust badges** — glass-morphism card highlighting 6 key selling points
-- **Heritage story** — timeline with scroll-triggered animations
-- **How It's Made** — 5-step process with numbered cards
-- **Product collection** — modal-based product viewer with color swatches and WhatsApp inquiry
+- **Heritage story** — image with floating stat card and scroll-triggered timeline
+- **How It's Made** — 5-step alternating process with connecting line
+- **Product collection** — modal-based product viewer with color swatches and WhatsApp inquiry button
 - **Gallery** — masonry layout with lightbox preview (Escape key support)
-- **Testimonials** — review carousel with rating stars
-- **Sustainability** — eco-friendly messaging with animated counters
-- **FAQ** — accordion with search and motion-reduce support
+- **Testimonials** — review cards with rating stars and stats bar
+- **Sustainability** — eco-friendly messaging with percentage counters
+- **FAQ** — searchable accordion with motion-reduce support
 - **Dark mode** — persisted toggle with system preference detection
-- **Language switcher** — toggles `<html lang>` attribute
-- **Floating WhatsApp** — fixed bottom-right button with pre-filled inquiry message
+- **Language switcher** — full English / Tamil (தமிழ்) translation of all page content
+- **Floating WhatsApp** — fixed bottom-right button with pre-filled product inquiry message
 - **Floating particles** — canvas-based leaf particle animation
 - **404 & error pages** — custom `not-found.tsx` and `error.tsx`
 - **JSON-LD structured data** — Store schema for SEO
@@ -61,7 +61,7 @@ The site is fully static (pre-rendered), accessible, responsive, and optimized f
 - **Full ARIA** — roles, labels, expanded states, and focus management
 - **PWA manifest** — `manifest.json` with theme-color `#1F4D36`
 
-## 🛠️ Getting Started
+## Getting Started
 
 ```bash
 git clone <repo-url>
@@ -90,28 +90,27 @@ npm start
 npm run lint
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
 ├── app/
 │   ├── globals.css          # Tailwind v4 + custom design tokens
-│   ├── layout.tsx           # Root layout, fonts, skip-link, theme-color
+│   ├── layout.tsx           # Root layout, fonts, skip-link, theme-color, favicon
 │   ├── page.tsx             # Main landing page (all sections)
 │   ├── not-found.tsx        # Custom 404 page
 │   └── error.tsx            # Error boundary
 ├── components/
-│   ├── Navbar.tsx           # Glass nav, scroll detection, mobile menu
+│   ├── Navbar.tsx           # Glass nav, logo, scroll detection, mobile menu
 │   ├── Hero.tsx             # Split-screen hero with stats
 │   ├── TrustBadges.tsx      # 6 badges in glass card
 │   ├── WhyChoose.tsx        # Benefits section
-│   ├── HeritageStory.tsx    # Timeline section
+│   ├── HeritageStory.tsx    # Image + scroll-driven timeline
 │   ├── HowItsMade.tsx       # Process steps
-│   ├── ArtisanSpotlight.tsx # Artisan feature
 │   ├── ProductCollection.tsx# Product grid + modal + WhatsApp inquiry
 │   ├── Gallery.tsx          # Masonry + lightbox
-│   ├── Testimonials.tsx     # Reviews carousel
-│   ├── Sustainability.tsx   # Eco-friendly messaging
+│   ├── Testimonials.tsx     # Reviews with stats
+│   ├── Sustainability.tsx   # Eco-friendly percentage cards
 │   ├── FAQ.tsx              # Searchable accordion
 │   ├── CTABanner.tsx        # Call-to-action banner
 │   ├── Footer.tsx           # Newsletter, links, WhatsApp CTA
@@ -119,22 +118,23 @@ src/
 │   ├── FloatingWhatsApp.tsx # Fixed WhatsApp button
 │   ├── MegaMenu.tsx         # Hover mega menu
 │   ├── ThemeToggle.tsx      # Dark mode toggle
-│   ├── LanguageSwitcher.tsx # Language selector
+│   ├── LanguageSwitcher.tsx # EN / தமிழ் toggle
 │   ├── PageTransition.tsx   # Framer Motion page wrapper
-│   ├── Providers.tsx        # Lenis smooth scroll provider
+│   ├── Providers.tsx        # Lenis + LanguageProvider wrapper
 │   └── JsonLd.tsx           # JSON-LD structured data
 └── lib/
+    ├── LanguageContext.tsx  # Translation context (EN/TA) with useLanguage hook
     ├── data.ts              # Products, reviews, FAQ, timeline data
     └── utils.ts             # cn() + formatPrice() utilities
 ```
 
-## 🌐 Environment Variables
+## Environment Variables
 
 | Variable | Description |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL (used in JSON-LD and OG tags) |
 
-## ♿ Accessibility
+## Accessibility
 
 - Skip-to-content link
 - ARIA roles: `dialog`, `radiogroup`, `tablist`, `presentation`
@@ -143,7 +143,7 @@ src/
 - Reduced-motion support via `prefers-reduced-motion`
 - `suppressHydrationWarning` on form inputs (extension compatibility)
 
-## 📄 License
+## License
 
 MIT
 
