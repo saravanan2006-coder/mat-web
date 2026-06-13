@@ -4,17 +4,19 @@ import { motion } from "framer-motion"
 import { Star, Quote } from "lucide-react"
 import { reviews } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/lib/LanguageContext"
 
 const stats = [
-  { value: "4.8", label: "Average Rating", sub: "from 500+ reviews" },
-  { value: "98%", label: "Recommend Us", sub: "would buy again" },
-  { value: "5000+", label: "Happy Customers", sub: "across Tamil Nadu" },
+  { value: "4.8", labelKey: "testi.stat1", subKey: "testi.stat1sub" },
+  { value: "98%", labelKey: "testi.stat2", subKey: "testi.stat2sub" },
+  { value: "5000+", labelKey: "testi.stat3", subKey: "testi.stat3sub" },
 ]
 
 export default function Testimonials() {
+  const { t } = useLanguage()
+
   return (
     <section id="reviews" className="section-padding bg-white relative overflow-hidden">
-      {/* Decorative */}
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -translate-x-1/2" />
 
       <div className="container-wide relative">
@@ -25,17 +27,16 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">Testimonials</span>
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase">{t("testi.section")}</span>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary mt-4 mb-6">
-            What Our Customers Say
+            {t("testi.title")}
           </h2>
         </motion.div>
 
-        {/* Stats */}
         <div className="grid grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto">
           {stats.map((stat, i) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -43,13 +44,12 @@ export default function Testimonials() {
               className="text-center"
             >
               <div className="font-heading text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="font-semibold text-sm text-text">{stat.label}</div>
-              <div className="text-xs text-text-light">{stat.sub}</div>
+              <div className="font-semibold text-sm text-text">{t(stat.labelKey as any)}</div>
+              <div className="text-xs text-text-light">{t(stat.subKey as any)}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Reviews */}
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {reviews.map((review, i) => (
             <motion.div

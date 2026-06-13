@@ -2,14 +2,17 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Leaf, Star, Shield } from "lucide-react"
+import { useLanguage } from "@/lib/LanguageContext"
 
 const stats = [
-  { value: "5000+", label: "Happy Customers", icon: Star },
-  { value: "100%", label: "Natural Material", icon: Leaf },
-  { value: "20+", label: "Years Heritage", icon: Shield },
+  { value: "5000+", labelKey: "hero.stat1", icon: Star },
+  { value: "100%", labelKey: "hero.stat2", icon: Leaf },
+  { value: "20+", labelKey: "hero.stat3", icon: Shield },
 ]
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-primary-dark">
       <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-dark opacity-90" />
@@ -25,7 +28,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-secondary text-sm font-medium mb-8">
               <Leaf className="w-4 h-4" />
-              Handcrafted in Tamil Nadu
+              {t("hero.badge")}
             </span>
           </motion.div>
 
@@ -35,11 +38,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.34, 1.56, 0.64, 1] }}
             className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[0.9] mb-6"
           >
-            Sleep
+            {t("hero.title1")}
             <br />
-            <span className="text-secondary">Naturally.</span>
+            <span className="text-secondary">{t("hero.title2")}</span>
             <br />
-            Live Comfortably.
+            {t("hero.title3")}
           </motion.h1>
 
           <motion.p
@@ -48,7 +51,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
             className="text-white/70 text-lg md:text-xl max-w-lg mb-10 mx-auto lg:mx-0 font-light leading-relaxed"
           >
-            Experience the timeless comfort of handcrafted Korai Mats woven by skilled artisans in Tamil Nadu using centuries-old techniques.
+            {t("hero.desc")}
           </motion.p>
 
           <motion.div
@@ -61,14 +64,14 @@ export default function Hero() {
               href="#products"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-full font-semibold text-base hover:bg-accent-light transition-all duration-300 shadow-xl shadow-accent/20"
             >
-              Shop Collection
+              {t("hero.cta1")}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#heritage"
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white rounded-full font-semibold text-base hover:bg-white/10 transition-all duration-300"
             >
-              Discover Heritage
+              {t("hero.cta2")}
             </a>
           </motion.div>
 
@@ -79,13 +82,13 @@ export default function Hero() {
             className="flex flex-wrap gap-8 justify-center lg:justify-start"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
+              <div key={stat.labelKey} className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center">
                   <stat.icon className="w-5 h-5 text-secondary" />
                 </div>
                 <div>
                   <div className="text-white font-bold text-xl font-heading">{stat.value}</div>
-                  <div className="text-white/60 text-sm">{stat.label}</div>
+                  <div className="text-white/60 text-sm">{t(stat.labelKey as any)}</div>
                 </div>
               </div>
             ))}
@@ -102,7 +105,7 @@ export default function Hero() {
             <div className="absolute inset-0 animate-float-slow">
               <div className="w-full h-full rounded-[40px] bg-gradient-to-br from-secondary/20 to-secondary/5 backdrop-blur-sm border border-white/10 overflow-hidden shadow-2xl">
                 <img
-                  src="/images/180-2.jpg"
+                  src="/images/banner.png"
                   alt="Premium handwoven Korai Mat"
                   className="w-full h-full object-cover opacity-90"
                   width={550}
@@ -128,7 +131,7 @@ export default function Hero() {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
+        <span className="text-white/40 text-xs tracking-widest uppercase">{t("hero.scroll")}</span>
         <div className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-1.5">
           <motion.div
             animate={{ y: [0, 12, 0] }}

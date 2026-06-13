@@ -4,7 +4,6 @@ import TrustBadges from "@/components/TrustBadges"
 import WhyChoose from "@/components/WhyChoose"
 import HeritageStory from "@/components/HeritageStory"
 import HowItsMade from "@/components/HowItsMade"
-import ArtisanSpotlight from "@/components/ArtisanSpotlight"
 import ProductCollection from "@/components/ProductCollection"
 import Gallery from "@/components/Gallery"
 import Testimonials from "@/components/Testimonials"
@@ -29,7 +28,6 @@ export default function Home() {
         <WhyChoose />
         <HeritageStory />
         <HowItsMade />
-        <ArtisanSpotlight />
         <ProductCollection />
         <Gallery />
         <Testimonials />

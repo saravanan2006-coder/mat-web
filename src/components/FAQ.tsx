@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Search } from "lucide-react"
 import { faqs } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/lib/LanguageContext"
 
 export default function FAQ() {
+  const { t } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [search, setSearch] = useState("")
 
@@ -24,16 +26,15 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">FAQ</span>
-          <h2 className="font-heading text-4xl md:text-5xl text-primary mt-4 mb-6">Frequently Asked Questions</h2>
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase">{t("faq.section")}</span>
+          <h2 className="font-heading text-4xl md:text-5xl text-primary mt-4 mb-6">{t("faq.title")}</h2>
         </motion.div>
 
-        {/* Search */}
         <div className="relative max-w-md mx-auto mb-10">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-light" />
           <input
             type="text"
-            placeholder="Search questions..."
+            placeholder={t("faq.placeholder")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             suppressHydrationWarning
@@ -56,12 +57,12 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between p-6 text-left"
               >
                 <span className="font-semibold text-text pr-4">{faq.q}</span>
-            <ChevronDown
-              className={cn(
-                "w-5 h-5 text-text-light shrink-0 transition-transform duration-300 motion-reduce:transition-none",
-                openIndex === i && "rotate-180"
-              )}
-            />
+                <ChevronDown
+                  className={cn(
+                    "w-5 h-5 text-text-light shrink-0 transition-transform duration-300 motion-reduce:transition-none",
+                    openIndex === i && "rotate-180"
+                  )}
+                />
               </button>
               <AnimatePresence>
                 {openIndex === i && (
@@ -81,7 +82,7 @@ export default function FAQ() {
         </div>
 
         {filtered.length === 0 && (
-          <p className="text-center text-text-light py-12">No questions found. Try a different search term.</p>
+          <p className="text-center text-text-light py-12">{t("faq.empty")}</p>
         )}
       </div>
     </section>

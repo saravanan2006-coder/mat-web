@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import { SmoothScrollProvider } from "@/components/Providers"
+import { Providers } from "@/components/Providers"
 import PageTransition from "@/components/PageTransition"
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/images/Screenshot_2025-10-06-11-43-49-059_com.instagram.android-edit-removebg-preview.png",
+    icon: "/images/Logo.png",
   },
 }
 
@@ -45,9 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        <SmoothScrollProvider>
+        <Providers>
           <PageTransition>{children}</PageTransition>
-        </SmoothScrollProvider>
+        </Providers>
       </body>
     </html>
   )

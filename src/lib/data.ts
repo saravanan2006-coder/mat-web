@@ -24,8 +24,8 @@ export const products: Product[] = [
     rating: 3.8,
     badge: "Bestseller",
     variations: [
-      { id: "var_001a", colorName: "Green", colorHex: "#22c55e", images: ["/images/4-white(1).jpg", "/images/4-white (2).jpg"] },
-      { id: "var_001b", colorName: "Purple", colorHex: "#a855f7", images: ["/images/4-white pur.jpg"] },
+      { id: "var_001a", colorName: "Green", colorHex: "#22c55e", images: ["/images/classic plain.jpg"] },
+      { id: "var_001b", colorName: "Purple", colorHex: "#a855f7", images: ["/images/classic1.jpg"] },
     ],
   },
   {
@@ -36,8 +36,8 @@ export const products: Product[] = [
     rating: 4.6,
     badge: "Popular",
     variations: [
-      { id: "var_002a", colorName: "Red & Gold", colorHex: "#eab308", images: ["/images/color-yell (2).jpg"] },
-      { id: "var_002b", colorName: "Green & Red", colorHex: "#16a34a", images: ["/images/color-yell.jpg", "/images/color-green.jpg"] },
+      { id: "var_002a", colorName: "Red & Gold", colorHex: "#eab308", images: ["/images/Patterned.jpg"] },
+      // { id: "var_002b", colorName: "Green & Red", colorHex: "#16a34a", images: ["/images/color-yell.jpg", "/images/color-green.jpg"] },
     ],
   },
   {
@@ -48,8 +48,8 @@ export const products: Product[] = [
     rating: 4.6,
     badge: "Premium",
     variations: [
-      { id: "var_003a", colorName: "Dotted R&B", colorHex: "#2563eb", images: ["/images/4-dotted (2).jpg", "/images/4-dotted.jpg"] },
-      { id: "var_003b", colorName: "Light Green", colorHex: "#4ade80", images: ["/images/4-color.jpg", "/images/4-color (2).jpg"] },
+      { id: "var_003a", colorName: "Dotted R&B", colorHex: "#2563eb", images: ["/images/artisian.jpg"] },
+      // { id: "var_003b", colorName: "Light Green", colorHex: "#4ade80", images: ["/images/4-color.jpg", "/images/4-color (2).jpg"] },
     ],
   },
   {
@@ -60,14 +60,14 @@ export const products: Product[] = [
     rating: 4.9,
     badge: "Premium",
     variations: [
-      { id: "var_004a", colorName: "Dark Orange", colorHex: "#c2410c", images: ["/images/180-2.jpg", "/images/180-1.jpg"] },
+      { id: "var_004a", colorName: "Dark Orange", colorHex: "#c2410c", images: ["/images/prem.jpg", "/images/prem1.jpg"] },
     ],
   },
   {
     id: "prod_005",
     name: "Eco-Friendly Mat",
     description: "Sustainably sourced korai grass mats that are environmentally friendly and biodegradable.",
-    price: 279,
+    price: 150,
     rating: 3.7,
     badge: "Affordable",
     variations: [
@@ -84,7 +84,7 @@ export const products: Product[] = [
     rating: 4.2,
     badge: "Budget",
     variations: [
-      { id: "var_006a", colorName: "Red", colorHex: "#ef4444", images: ["/images/spl-clr.jpg", "/images/spl-clr (2).jpg"] },
+      { id: "var_006a", colorName: "Red", colorHex: "#ef4444", images: ["/images/special colored.png"] },
     ],
   },
   {
@@ -95,7 +95,7 @@ export const products: Product[] = [
     rating: 4.0,
     badge: "Simple",
     variations: [
-      { id: "var_007a", colorName: "Green", colorHex: "#22c55e", images: ["/images/spl-green.jpg"] },
+      { id: "var_007a", colorName: "Green", colorHex: "#22c55e", images: ["/images/eco.jpg"] },
       { id: "var_007b", colorName: "Golden", colorHex: "#f59e0b", images: ["/images/spl-yellow.jpg"] },
       { id: "var_007c", colorName: "Red", colorHex: "#ef4444", images: ["/images/spl-red.jpg"] },
     ],

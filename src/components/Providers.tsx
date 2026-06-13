@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react"
 import Lenis from "lenis"
+import { LanguageProvider } from "@/lib/LanguageContext"
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null)
@@ -20,4 +21,14 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return <>{children}</>
+}
+
+export function Providers({ children }: { children: ReactNode }) {
+  return (
+    <LanguageProvider>
+      <SmoothScrollProvider>
+        {children}
+      </SmoothScrollProvider>
+    </LanguageProvider>
+  )
 }

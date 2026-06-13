@@ -3,20 +3,23 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ZoomIn } from "lucide-react"
+import { useLanguage } from "@/lib/LanguageContext"
 
 const galleryImages = [
   { src: "/images/floor.jpg", alt: "Korai mat in modern bedroom" },
-  { src: "/images/img1.png", alt: "Artisan weaving korai grass mat" },
-  { src: "/images/img2.jpg", alt: "Traditional Tamil home with korai mats" },
-  { src: "/images/180-2.jpg", alt: "Premium korai mat display" },
-  { src: "/images/4-white(1).jpg", alt: "Classic plain korai mat" },
-  { src: "/images/4-color.jpg", alt: "Colorful handwoven korai mat" },
-  { src: "/images/color-yell.jpg", alt: "Patterned korai mat" },
-  { src: "/images/normal-yell.jpg", alt: "Eco-friendly korai mat" },
-  { src: "/images/spl-green.jpg", alt: "Special green korai mat" },
+  { src: "/images/classic plain.jpg", alt: "Artisan weaving korai grass mat" },
+  { src: "/images/classic1.jpg", alt: "Traditional Tamil home with korai mats" },
+  { src: "/images/Patterned.jpg", alt: "Premium korai mat display" },
+  { src: "/images/special colored.png", alt: "Classic plain korai mat" },
+  // { src: "/images/img1.png", alt: "Colorful handwoven korai mat" },
+  { src: "/images/artisian.jpg", alt: "Patterned korai mat" },
+  { src: "/images/eco.jpg", alt: "Eco-friendly korai mat" },
+  { src: "/images/prem1.jpg", alt: "Special green korai mat" },
+  { src: "/images/prem.jpg", alt: "Special green korai mat" },
 ]
 
 export default function Gallery() {
+  const { t } = useLanguage()
   const [lightbox, setLightbox] = useState<string | null>(null)
 
   useEffect(() => {
@@ -43,8 +46,8 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">Gallery</span>
-          <h2 className="font-heading text-4xl md:text-5xl text-primary mt-4 mb-6">Life With Korai</h2>
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase">{t("gallery.section")}</span>
+          <h2 className="font-heading text-4xl md:text-5xl text-primary mt-4 mb-6">{t("gallery.title")}</h2>
         </motion.div>
 
         <div className="columns-2 md:columns-3 gap-4 space-y-4">

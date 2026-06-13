@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Leaf, Recycle, Wind, Droplets, TreePine, Sun } from "lucide-react"
+import { useLanguage } from "@/lib/LanguageContext"
 
 const facts = [
   { icon: Leaf, label: "100% Biodegradable", desc: "Returns to earth naturally", value: "100" },
@@ -13,6 +14,8 @@ const facts = [
 ]
 
 export default function Sustainability() {
+  const { t } = useLanguage()
+
   return (
     <section className="section-padding bg-primary-dark text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
@@ -32,13 +35,12 @@ export default function Sustainability() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">Sustainability</span>
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase">{t("sustain.section")}</span>
           <h2 className="font-heading text-4xl md:text-5xl text-white mt-4 mb-6">
-            Kind to Nature,<br />
-            Kind to You
+            {t("sustain.title1")}<br />{t("sustain.title2")}
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto font-light">
-            Every Korai mat is a promise to the planet — 100% natural, biodegradable, and made with love.
+            {t("sustain.desc")}
           </p>
         </motion.div>
 

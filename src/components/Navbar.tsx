@@ -7,17 +7,19 @@ import { cn } from "@/lib/utils"
 import MegaMenu from "./MegaMenu"
 import ThemeToggle from "./ThemeToggle"
 import LanguageSwitcher from "./LanguageSwitcher"
+import { useLanguage } from "@/lib/LanguageContext"
 
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Our Heritage", href: "#heritage" },
-  { label: "Collection", href: "#products" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+const navKeys = [
+  { key: "nav.home", href: "#home" },
+  { key: "nav.heritage", href: "#heritage" },
+  { key: "nav.collection", href: "#products" },
+  { key: "nav.benefits", href: "#benefits" },
+  { key: "nav.reviews", href: "#reviews" },
+  { key: "nav.contact", href: "#contact" },
 ]
 
 export default function Navbar() {
+  const { t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -26,6 +28,13 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  const mobileLinks = [
+    ...navKeys,
+    { key: "nav.artisans", href: "#how-its-made" },
+    { key: "nav.gallery", href: "#gallery" },
+    { key: "nav.sustainability", href: "#sustainability" },
+  ]
 
   return (
     <>
@@ -42,24 +51,24 @@ export default function Navbar() {
       >
         <nav className="flex items-center justify-between h-20 max-w-[1400px] mx-auto" aria-label="Main navigation">
           <div className="flex items-center gap-8">
-            <a href="#home" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="text-white font-heading text-lg font-bold">T</span>
+            <a href="#home" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-full overflow-hidden group-hover:scale-110 transition-transform flex-shrink-0">
+                <img src="/images/Logo.png" alt="Thenmozhi Korai Mats" className="w-full h-full object-cover" width={40} height={40} />
               </div>
-              <span className="font-heading text-xl font-bold text-primary hidden sm:block group-hover:text-accent transition-colors dark:text-secondary">
-                Thenmozhi
+              <span className="font-heading text-lg font-bold text-primary hidden sm:block group-hover:text-accent transition-colors dark:text-secondary leading-tight">
+                Thenmozhi<br />Korai Mats
               </span>
             </a>
 
             <div className="hidden lg:flex items-center gap-1">
               <MegaMenu />
-              {navLinks.map((link) => (
+              {navKeys.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   className="relative px-4 py-2 text-sm font-medium text-text/80 hover:text-primary rounded-lg hover:bg-black/5 dark:text-white/70 dark:hover:text-secondary dark:hover:bg-white/5 transition-all duration-300"
                 >
-                  {link.label}
+                  {t(link.key as any)}
                 </a>
               ))}
             </div>
@@ -93,12 +102,7 @@ export default function Navbar() {
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col p-8 gap-2">
-              {[
-                ...navLinks,
-                { label: "Artisans", href: "#how-its-made" },
-                { label: "Gallery", href: "#gallery" },
-                { label: "Sustainability", href: "#sustainability" },
-              ].map((link, i) => (
+              {mobileLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
@@ -108,7 +112,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="py-4 px-4 text-lg font-medium text-text/80 dark:text-white/80 hover:text-primary border-b border-black/5 dark:border-white/10 hover:bg-cream dark:hover:bg-white/5 rounded-xl transition-all"
                 >
-                  {link.label}
+                  {t(link.key as any)}
                 </motion.a>
               ))}
             </div>
